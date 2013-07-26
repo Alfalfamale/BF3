@@ -64,11 +64,10 @@ function getAssignments(
 
 	if(!$player) return $assignments;
 
-	foreach(
-		getPlayerData($player, array('assignments'))['stats']['assignments']
-		as
-		$raw_assignment_group
-	)
+	$data = getPlayerData($player, array('assignments'));
+	$raw_assignment_groups = $data['stats']['assignments'];
+
+	foreach($raw_assignment_groups as $raw_assignment_group)
 		foreach($raw_assignment_group as $raw_assignment){
 
 			if(($raw_assignment['count'] == 1) && !$show_completed_assignments)
