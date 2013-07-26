@@ -8,4 +8,12 @@ window.addEvent('domready', function(){
 				* (element.get('data-width') / 100)
 		);
 	});
+
+	$('menu').getElements('input[type="checkbox"], select').addEvent(
+		'change',
+		function(element){
+
+			$('menu').submit();
+		}
+	);
 });
