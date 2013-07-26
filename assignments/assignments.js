@@ -9,7 +9,7 @@ window.addEvent('domready', function(){
 		);
 	});
 
-	$('menu').getElements('input[type="checkbox"], select').addEvent(
+	$('menu').getElements('input[type="checkbox"], select[name="player_select"]').addEvent(
 		'change',
 		function(element){
 
