@@ -19,6 +19,7 @@
 				<form id="menu">
 					<input type="text" name="player"><br>
 					<select name="player_select">
+							<option value="">Select player</option>
 						<? foreach($players as $name): ?>
 							<option
 								<? if($player == $name): ?>
