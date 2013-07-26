@@ -1,0 +1,39 @@
+body{
+	line-height: 15px;
+}
+
+.refresh{
+	float: left;
+}
+
+.clear{
+	clear: both;
+}
+
+.assignment{
+	margin: 10px;
+	border: solid 1px black;
+}
+
+.assignment[data-inactive]{
+	background-color: red;
+}
+
+.assignment .name{
+	height: 15px;
+}
+
+.assignment .progress{
+	height: 15px;
+	margin-top: -15px;
+	background-color: lightgreen;
+	width: 0%;
+}
+
+.assignment .criteria{
+	height: 15px;
+}
+
+.assignment .criteria .name{
+	height: 15px;
+}
