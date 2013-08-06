@@ -11,11 +11,16 @@ else $player = isset($_GET['player_select']) ? $_GET['player_select'] : '';
 
 $players = getPlayers();
 
+$players['alfalfamale'] = 'alfalfamale';
+$players['djsnels'] = 'djsnels';
+$players['eicel'] = 'eicel';
+
 $hide_inactive = isset($_GET['hide_inactive']);
 $show_completed_assignments = isset($_GET['show_completed_assignments']);
 $show_completed_criteria = isset($_GET['show_completed_criteria']);
+$beta = isset($_GET['beta']);
 
-if(isset($_GET['order'])){
+if($beta && isset($_GET['order'])){
 
 	$order = $_GET['order'];
 }
@@ -32,6 +37,13 @@ $assignments = getAssignments(
 	$order
 );
 
-usort($assignments, "blocker");
+if($beta){
+
+	usort($assignments, "blocker");
+}
+else{
+
+	usort($assignments, "assignmentPercentageDecrease");
+}
 
 include 'assignments/assignments.php';

@@ -61,6 +61,17 @@
 							/>
 							Show completed criteria
 						</label><br>
+						<label>
+							<input
+								type="checkbox"
+								name="beta"
+								<? if($beta): ?>
+									checked
+								<? endif; ?>
+							/>
+							Beta options
+						</label><br>
+						<? if($beta): ?>
 						<select multiple name="order[]" size="17">
 							<option value="0" <? if(in_array(0, $order)) echo 'selected'; ?>>0: Unlock assignments for the Xbow</option>
 							<option value="1" <? if(in_array(1, $order)) echo 'selected'; ?>>1: Unlock the 2nd tier assignments in premium</option>
@@ -81,6 +92,8 @@
 							<option value="12" <? if(in_array(12, $order)) echo 'selected'; ?>>12: should have come while doing the rest</option>
 						</select>
 						CTRL-click and/or drag to select multiple<br>
+						<? endif; ?>
+						<input type="submit" value="Show me the money!">
 						<a
 							href="http://bf3stats.com/stats_pc/<? echo $player; ?>"
 							target="_blank"
@@ -88,21 +101,18 @@
 							refresh
 						</a>
 					</div>
-					<div class="submit">
-						<input type="submit" value=">">
-					</div>
 				</form>
 
 			</div>
 			<? foreach($assignments as $assignment): ?>
 				<div
-					class="assignment"
+					class="assignment item"
 					<? if($assignment->inactive): ?>
 						data-inactive
 					<? endif; ?>
 				>
 					<div class="name">
-						<b><? echo $assignment->importance, ': ', $assignment->name; ?></b>
+						<b><? echo ($beta ? $assignment->importance . ' - ' : ''), $assignment->name; ?></b>
 					</div>
 					<div
 						class="progress"

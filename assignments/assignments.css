@@ -43,24 +43,13 @@
 	float: left;
 }
 
-.menu .submit{
-	float: left;
-	height: 377px;
-	margin-top: -1px;
-}
-
 #menu{
 	display: inline-block;
 	height: 100%;
 }
 
 .menu input[type="text"],
+.menu input[type="submit"],
 .menu select{
 	width: 100%;	
-}
-
-
-.menu input[type="submit"]{
-	height: 100%;
-	width: 100%;
 }
